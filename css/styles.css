@@ -1793,6 +1793,29 @@ iframe#ch-plugin-core {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
+/* Vertical Scroll Layout for Project Details */
+.work-images-vertical-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.work-images-vertical-scroll img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.work-images-vertical-scroll img:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
 .work-images-pagination {
     display: flex;
     justify-content: center;
@@ -1854,6 +1877,10 @@ iframe#ch-plugin-core {
 
     .work-images-grid img {
         height: 250px;
+    }
+
+    .work-images-vertical-scroll {
+        gap: 8px;
     }
 
     .work-images-pagination {

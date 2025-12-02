@@ -75,36 +75,36 @@ const awardsData = {
 
 const worksData = [
     // 드라마
-    {title: "착한사나이", type: "drama", year: "2025", platform: "JTBC/Disney"},
+    {title: "착한사나이", type: "drama", year: "2025", platform: "JTBC/Disney", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/GM.jpg?raw=true"},
 
     // Commercial
-    {title: "서울시자살예방캠페인 '시그널'", type: "commercial", year: "2025", category: "공익광고"},
+    {title: "서울시자살예방캠페인 '시그널'", type: "commercial", year: "2025", category: "공익광고", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_1.jpg?raw=true"},
 
     // M/V
-    {title: "Gardener", artist: "클라우디안", type: "mv", year: "2025", category: "뮤직비디오"},
+    {title: "Gardener", artist: "클라우디안", type: "mv", year: "2025", category: "뮤직비디오", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/cloud_1.jpg?raw=true"},
     {title: "Legend Comes To Life", artist: "클라우디안", type: "mv", year: "2025", category: "뮤직비디오"},
 
     // Film - 순서: 선이(최신) → 제비 → 그릇된 소녀(1) → 베란다(2) → 가문의영광(3) → 만추(4) → 수상내역 많은 순
-    {title: "선이", type: "short", year: "2025", filmId: "sune", category: "단편"},
-    {title: "제비", type: "short", year: "2025", filmId: "jevi", category: "단편"},
-    {title: "그릇된 소녀", type: "short", year: "2025", filmId: "wronggirl", category: "독립장편"},
+    {title: "선이", type: "short", year: "2025", filmId: "sune", category: "단편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/sune1.jpg?raw=true"},
+    {title: "제비", type: "short", year: "2025", filmId: "jevi", category: "단편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/jevi1.jpg?raw=true"},
+    {title: "그릇된 소녀", type: "short", year: "2025", filmId: "wronggirl", category: "독립장편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/after11.jpg?raw=true"},
     {title: "베란다", type: "feature", year: "2026", category: "상업영화"},
-    {title: "가문의영광", type: "feature", year: "2023", category: "상업영화"},
+    {title: "가문의영광", type: "feature", year: "2023", category: "상업영화", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/after19.jpg?raw=true"},
     {title: "만추", type: "feature", year: "2023 Remaster", category: "상업영화"},
     {title: "얼룩", type: "short", year: "2023", filmId: "stain", category: "단편"},
     {title: "브라보 마이라이프", type: "short", year: "2021", filmId: "bravolife", category: "단편"},
     {title: "비창", type: "short", year: "2021", filmId: "bichang", category: "단편"},
     {title: "청정구역", type: "short", year: "2022", filmId: "cleanzone", category: "단편"},
     {title: "초상", type: "short", year: "2021", filmId: "portrait", category: "단편"},
-    {title: "우리동네영화광", type: "feature", year: "2024", filmId: "moviefan", category: "독립장편"},
+    {title: "우리동네영화광", type: "feature", year: "2024", filmId: "moviefan", category: "독립장편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/KU_1.jpg?raw=true"},
     {title: "취급주의", type: "short", year: "2024", filmId: "caution", category: "단편"},
     {title: "멍", type: "short", year: "2024", filmId: "mung", category: "단편"},
     {title: "유해한 녀석들", type: "short", year: "2020", filmId: "harmful", category: "단편"},
-    {title: "BlackSnake", type: "feature", year: "2025", category: "독립장편"},
-    {title: "비밀일수밖에", type: "feature", year: "2025", category: "독립장편"},
+    {title: "BlackSnake", type: "feature", year: "2025", category: "독립장편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/BS3.jpg?raw=true"},
+    {title: "비밀일수밖에", type: "feature", year: "2025", category: "독립장편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/secert_1.jpg?raw=true"},
     {title: "워크숍 3", type: "short", year: "2025", filmId: "workshop3", category: "단편"},
-    {title: "환영", type: "short", year: "2024", category: "단편"},
-    {title: "로망스", type: "feature", year: "2024", category: "독립장편"},
+    {title: "환영", type: "short", year: "2024", category: "단편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/after2.jpg?raw=true"},
+    {title: "로망스", type: "feature", year: "2024", category: "독립장편", representativeImage: "https://github.com/feeldizDI/feeldiz_di/blob/main/after16.jpg?raw=true"},
     {title: "우리두리", type: "short", year: "2022", filmId: "uriduri", category: "단편"},
     {title: "휴일", type: "short", year: "2021", filmId: "holiday", category: "단편"},
     {title: "오픈유어센스", type: "short", year: "2021", filmId: "openyoursense", category: "단편"}
@@ -222,6 +222,77 @@ function showAwards(filmId, title) {
     }
 }
 
+function showProjectDetailPage(project) {
+    try {
+        // Find matching images in portfolioData
+        let matchTitle = project.title;
+        if (project.artist) {
+            matchTitle = `${project.title} ${project.artist}`;
+        }
+
+        // Try exact match first
+        let projectImages = portfolioData.filter(item => {
+            if (project.artist) {
+                return item.description === project.title ||
+                       item.description === matchTitle ||
+                       item.description === `${project.title} ${project.artist}`;
+            }
+            return item.description === project.title;
+        });
+
+        // If no images found, try without artist for M/V
+        if (projectImages.length === 0 && project.artist) {
+            projectImages = portfolioData.filter(item => item.description.includes(project.title));
+        }
+
+        if (projectImages.length === 0) {
+            logger.log('No images found for project:', project.title);
+            alert('이 작품의 이미지가 아직 업로드되지 않았습니다.');
+            return;
+        }
+
+        const modal = document.getElementById('workImagesModal');
+        const modalTitle = document.getElementById('workImagesTitle');
+        const workImagesGrid = document.getElementById('workImagesGrid');
+        const paginationContainer = document.querySelector('.work-images-pagination');
+
+        if (!modal || !modalTitle || !workImagesGrid) {
+            logger.error('Project detail modal elements not found');
+            return;
+        }
+
+        // Set title with artist if M/V
+        if (project.artist) {
+            modalTitle.textContent = `${project.title} - ${project.artist}`;
+        } else {
+            modalTitle.textContent = project.title;
+        }
+
+        // Hide pagination for vertical scroll view
+        if (paginationContainer) {
+            paginationContainer.style.display = 'none';
+        }
+
+        // Render all images in vertical scroll layout
+        workImagesGrid.className = 'work-images-vertical-scroll';
+        workImagesGrid.innerHTML = projectImages.map(item => `
+            <img src="${item.image}" alt="${item.description}" loading="lazy">
+        `).join('');
+
+        // Add click event to images to open in full modal
+        workImagesGrid.querySelectorAll('img').forEach((img, idx) => {
+            img.addEventListener('click', () => {
+                openImageModal(projectImages, idx);
+            });
+        });
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    } catch (error) {
+        logger.error('Error in showProjectDetailPage:', error);
+    }
+}
+
 function showWorkImages(work) {
     try {
         // Find matching images in portfolioData
@@ -320,12 +391,38 @@ function renderWorkImagesPage() {
     }
 }
 
+function openImageModal(images, startIndex) {
+    try {
+        AppState.currentModalItems = images;
+        AppState.currentModalIndex = startIndex;
+
+        const imageModal = document.getElementById('imageModal');
+        if (imageModal) {
+            showModalContent(images[startIndex]);
+            imageModal.style.display = 'block';
+        }
+    } catch (error) {
+        logger.error('Error in openImageModal:', error);
+    }
+}
+
 function closeWorkImages() {
     try {
         const modal = document.getElementById('workImagesModal');
+        const workImagesGrid = document.getElementById('workImagesGrid');
+        const paginationContainer = document.querySelector('.work-images-pagination');
+
         if (modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+
+        // Reset grid class and show pagination for next use
+        if (workImagesGrid) {
+            workImagesGrid.className = 'work-images-grid';
+        }
+        if (paginationContainer) {
+            paginationContainer.style.display = 'flex';
         }
     } catch (error) {
         logger.error('Error in closeWorkImages:', error);
@@ -507,7 +604,7 @@ const portfolioData = [
 // Application state management (encapsulated to avoid global pollution)
 const AppState = {
     loadedImages: 0,
-    totalImages: portfolioData.length,
+    totalImages: worksData.filter(work => work.representativeImage).length,
     currentFilter: 'all',
     currentModalIndex: 0,
     currentModalItems: [],
@@ -550,58 +647,99 @@ function renderGallery(items) {
         }
 
         gallery.innerHTML = '';
-        let filteredItems = AppState.currentFilter === 'all' ? [...items].sort((a, b) => b.id - a.id) :
-                           AppState.currentFilter === 'drama' ? items.filter(item => item.description === "착한사나이") :
-                           AppState.currentFilter === 'commercial' ? items.filter(item => item.type === "commercial") :
-                           AppState.currentFilter === 'mv' ? items.filter(item => item.type === "mv") :
-                           AppState.currentFilter === 'short' ? items.filter(item => item.type === "short") :
-                           AppState.currentFilter === 'feature' ? items.filter(item => item.type === "feature") :
-                           [...items].sort(() => Math.random() - 0.5);
 
-        // All Works 필터는 모든 아이템을 3열 레이아웃으로 표시
+        // Get projects with representative images based on current filter
+        let filteredProjects = [];
+
         if (AppState.currentFilter === 'all') {
-            logger.log('All Works - 3-column layout for all items:', filteredItems.length);
-            for (let i = 0; i < filteredItems.length; i += 3) {
-                const galleryRow = document.createElement('div');
-                galleryRow.className = 'gallery-row wide-layout';
-                for (let j = 0; j < 3 && (i + j) < filteredItems.length; j++) {
-                    galleryRow.appendChild(createGalleryItem(filteredItems[i + j], i + j));
-                }
-                gallery.appendChild(galleryRow);
-            }
-        } else {
-            // 다른 필터: Drama, Commercial, M/V는 3열, Feature/Short는 2열
-            const gmItems = AppState.currentFilter === 'random' ? [] :
-                           (AppState.currentFilter === 'drama' || AppState.currentFilter === 'commercial' || AppState.currentFilter === 'mv') ? filteredItems :
-                           filteredItems.filter(item => item.description === "착한사나이");
-            const otherItems = AppState.currentFilter === 'random' ? filteredItems :
-                              (AppState.currentFilter === 'drama' || AppState.currentFilter === 'commercial' || AppState.currentFilter === 'mv') ? [] :
-                              filteredItems.filter(item => item.description !== "착한사나이");
+            filteredProjects = worksData.filter(work => work.representativeImage);
+        } else if (AppState.currentFilter === 'drama') {
+            filteredProjects = worksData.filter(work => work.type === 'drama' && work.representativeImage);
+        } else if (AppState.currentFilter === 'commercial') {
+            filteredProjects = worksData.filter(work => work.type === 'commercial' && work.representativeImage);
+        } else if (AppState.currentFilter === 'mv') {
+            filteredProjects = worksData.filter(work => work.type === 'mv' && work.representativeImage);
+        } else if (AppState.currentFilter === 'short') {
+            filteredProjects = worksData.filter(work => work.type === 'short' && work.representativeImage);
+        } else if (AppState.currentFilter === 'feature') {
+            filteredProjects = worksData.filter(work => work.type === 'feature' && work.representativeImage);
+        } else if (AppState.currentFilter === 'random') {
+            filteredProjects = [...worksData.filter(work => work.representativeImage)].sort(() => Math.random() - 0.5);
+        }
 
-            logger.log('Current filter:', AppState.currentFilter, 'gmItems (3-column):', gmItems.length, 'otherItems (2-column):', otherItems.length);
+        logger.log('Rendering gallery with', filteredProjects.length, 'projects, filter:', AppState.currentFilter);
 
-            if (gmItems.length > 0) {
-                for (let i = 0; i < gmItems.length; i += 3) {
-                    const galleryRow = document.createElement('div');
-                    galleryRow.className = 'gallery-row wide-layout';
-                    for (let j = 0; j < 3 && (i + j) < gmItems.length; j++) {
-                        galleryRow.appendChild(createGalleryItem(gmItems[i + j], i + j));
-                    }
-                    gallery.appendChild(galleryRow);
-                }
+        // Create 2-column grid layout
+        for (let i = 0; i < filteredProjects.length; i += 2) {
+            const galleryRow = document.createElement('div');
+            galleryRow.className = 'gallery-row';
+
+            if (filteredProjects[i]) {
+                galleryRow.appendChild(createProjectGalleryItem(filteredProjects[i], i));
             }
-            if (otherItems.length > 0) {
-                for (let i = 0; i < otherItems.length; i += 2) {
-                    const galleryRow = document.createElement('div');
-                    galleryRow.className = 'gallery-row';
-                    if (otherItems[i]) galleryRow.appendChild(createGalleryItem(otherItems[i], gmItems.length + i));
-                    if (otherItems[i + 1]) galleryRow.appendChild(createGalleryItem(otherItems[i + 1], gmItems.length + i + 1));
-                    gallery.appendChild(galleryRow);
-                }
+            if (filteredProjects[i + 1]) {
+                galleryRow.appendChild(createProjectGalleryItem(filteredProjects[i + 1], i + 1));
             }
+
+            gallery.appendChild(galleryRow);
         }
     } catch (error) {
         logger.error('Error in renderGallery:', error);
+    }
+}
+
+function createProjectGalleryItem(project, index) {
+    try {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item loading';
+        galleryItem.style.animationDelay = `${index * 0.1}s`;
+
+        const imageSrc = project.representativeImage;
+        const categoryText = project.category || project.type;
+        const titleText = project.artist ? `${project.title} - ${project.artist}` : project.title;
+
+        galleryItem.innerHTML = `
+            <img src="${imageSrc}" alt="${titleText} by Feeldiz DI Studio" loading="lazy">
+            <div class="gallery-item-overlay">
+                <p class="overlay-category">${categoryText}</p>
+                <p class="overlay-description">${titleText}</p>
+            </div>
+        `;
+
+        const img = galleryItem.querySelector('img');
+
+        // Enhanced error handling with fallback placeholder
+        img.onload = () => {
+            try {
+                galleryItem.classList.remove('loading');
+                checkAllImagesLoaded();
+            } catch (error) {
+                logger.error('Error handling image load:', error);
+            }
+        };
+
+        img.onerror = () => {
+            try {
+                logger.warn('Failed to load image:', imageSrc);
+                img.src = FALLBACK_IMAGE;
+                galleryItem.classList.remove('loading');
+                checkAllImagesLoaded();
+            } catch (error) {
+                logger.error('Error handling image error:', error);
+                galleryItem.classList.remove('loading');
+                checkAllImagesLoaded();
+            }
+        };
+
+        // Add click handler to open vertical scroll view
+        galleryItem.addEventListener('click', () => {
+            showProjectDetailPage(project);
+        });
+
+        return galleryItem;
+    } catch (error) {
+        logger.error('Error in createProjectGalleryItem:', error);
+        return document.createElement('div');
     }
 }
 

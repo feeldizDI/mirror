@@ -276,7 +276,7 @@ function showProjectDetailPage(project) {
         // Render all images in vertical scroll layout
         workImagesGrid.className = 'work-images-vertical-scroll';
         workImagesGrid.innerHTML = projectImages.map(item => `
-            <img src="${item.image}" alt="${item.description}" loading="lazy">
+            <img src="${item.image}" alt="${item.description}">
         `).join('');
 
         // Add click event to images to open in full modal
@@ -371,7 +371,7 @@ function renderWorkImagesPage() {
 
         // Render grid
         grid.innerHTML = pageImages.map(item => `
-            <img src="${item.image}" alt="${item.description}" loading="lazy">
+            <img src="${item.image}" alt="${item.description}">
         `).join('');
 
         // Update pagination
@@ -699,7 +699,7 @@ function createProjectGalleryItem(project, index) {
         const titleText = project.artist ? `${project.title} - ${project.artist}` : project.title;
 
         galleryItem.innerHTML = `
-            <img src="${imageSrc}" alt="${titleText} by Feeldiz DI Studio" loading="lazy">
+            <img src="${imageSrc}" alt="${titleText} by Feeldiz DI Studio">
             <div class="gallery-item-overlay">
                 <p class="overlay-category">${categoryText}</p>
                 <p class="overlay-description">${titleText}</p>
@@ -751,7 +751,7 @@ function createGalleryItem(item, index) {
         const isVideo = item.type === 'video';
         const imageSrc = isVideo ? item.thumbnail : item.image;
         const playIcon = isVideo ? '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;color:white;font-size:3rem;opacity:0.8;">▶</div>' : '';
-        galleryItem.innerHTML = `<img src="${imageSrc}" alt="${item.description} - ${item.category} by Feeldiz DI Studio" loading="lazy" data-id="${item.id}">${playIcon}<div class="gallery-item-overlay"><p class="overlay-category">${item.category}</p><p class="overlay-description">${item.description}</p></div>`;
+        galleryItem.innerHTML = `<img src="${imageSrc}" alt="${item.description} - ${item.category} by Feeldiz DI Studio" data-id="${item.id}">${playIcon}<div class="gallery-item-overlay"><p class="overlay-category">${item.category}</p><p class="overlay-description">${item.description}</p></div>`;
         const img = galleryItem.querySelector('img');
 
         // Enhanced error handling with fallback placeholder

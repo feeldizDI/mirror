@@ -268,13 +268,13 @@ function showProjectDetailPage(project) {
             modalTitle.textContent = project.title;
         }
 
-        // Hide pagination for vertical scroll view
+        // Hide pagination for 2-column grid view
         if (paginationContainer) {
             paginationContainer.style.display = 'none';
         }
 
-        // Render all images in vertical scroll layout
-        workImagesGrid.className = 'work-images-vertical-scroll';
+        // Render all images in 2-column grid layout
+        workImagesGrid.className = 'work-images-two-column-grid';
         workImagesGrid.innerHTML = projectImages.map(item => `
             <img src="${item.image}" alt="${item.description}">
         `).join('');
@@ -560,17 +560,17 @@ const portfolioData = [
     {id: 207, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/KU_11.jpg?raw=true", description: "우리동네영화광", type: "feature"},
     {id: 208, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/KU_12.jpg?raw=true", description: "우리동네영화광", type: "feature"},
     // 시그널 (서울시 자살예방)
-    {id: 209, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_1.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 210, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_2.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 211, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_3.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 212, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_4.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 213, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_5.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 214, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_6.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 215, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_7.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 216, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_8.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 217, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_9.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 218, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_10.jpg?raw=true", description: "시그널", type: "commercial"},
-    {id: 219, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_11.jpg?raw=true", description: "시그널", type: "commercial"},
+    {id: 209, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_1.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 210, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_2.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 211, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_3.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 212, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_4.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 213, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_5.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 214, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_6.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 215, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_7.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 216, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_8.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 217, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_9.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 218, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_10.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
+    {id: 219, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/prob_11.jpg?raw=true", description: "서울시자살예방캠페인 '시그널'", type: "commercial"},
     // Gardener 클라우디안 (M/V)
     {id: 220, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/cloud_1.jpg?raw=true", description: "Gardener 클라우디안", type: "mv"},
     {id: 221, category: "portfolio", image: "https://github.com/feeldizDI/feeldiz_di/blob/main/cloud_2.jpg?raw=true", description: "Gardener 클라우디안", type: "mv"},

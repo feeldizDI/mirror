@@ -1793,6 +1793,30 @@ iframe#ch-plugin-core {
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
+/* 2-Column Grid Layout for Project Details */
+.work-images-two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.work-images-two-column-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.work-images-two-column-grid img:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
 /* Vertical Scroll Layout for Project Details */
 .work-images-vertical-scroll {
     display: flex;
@@ -1881,6 +1905,11 @@ iframe#ch-plugin-core {
 
     .work-images-vertical-scroll {
         gap: 8px;
+    }
+
+    .work-images-two-column-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .work-images-pagination {
